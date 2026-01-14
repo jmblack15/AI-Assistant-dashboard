@@ -7,10 +7,8 @@ interface AssistantState {
   selectedAssistant: Assistant | null;
   chatHistories: Record<string, Message[]>; 
 
-
   isModalOpen: boolean;
   modalMode: 'create' | 'edit';
-
 
   setAssistants: (assistants: Assistant[]) => void;
   addAssistant: (assistant: Assistant) => void;
