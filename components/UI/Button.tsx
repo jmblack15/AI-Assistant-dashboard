@@ -2,7 +2,6 @@ import { LucideIcon } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-// Utilidad para mezclar clases de Tailwind de forma segura
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
