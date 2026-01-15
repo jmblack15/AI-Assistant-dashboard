@@ -43,7 +43,6 @@ El flujo de creación de asistentes incluye una validación matemática estricta
 * ✅ **Modal de Pasos (Step-by-step):** Formulario dividido para mejorar la carga cognitiva del usuario.
 * ✅ **Entrenamiento Dinámico:** Área para definir reglas de comportamiento (prompts) por asistente.
 * ✅ **Chat en Tiempo Real Simulado:** Interfaz de chat con latencia artificial (1-2s) e indicador de "escribiendo" para emular la respuesta de una IA real.
-* ✅ **Dark Mode:** Adaptación completa de colores para trabajo en entornos de baja luz.
 
 ---
 
@@ -55,7 +54,6 @@ Para llevar este proyecto a un nivel de producción masivo, se proponen las sigu
 2.  **Testing Suite:** Añadir tests unitarios con **Vitest** para la lógica de validación y tests E2E con **Playwright** para el flujo del modal.
 3.  **Optimistic Updates:** Implementar actualizaciones optimistas en React Query para que las ediciones y eliminaciones se reflejen instantáneamente.
 4.  **Internacionalización (i18n):** Soporte multi-idioma para la interfaz de usuario.
-5.  **Seguridad:** Sanitización de prompts de usuario para evitar inyecciones de código.
 
 ---
 
