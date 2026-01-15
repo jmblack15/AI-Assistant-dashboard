@@ -13,7 +13,6 @@ export default function TrainingPage() {
   const { id } = useParams();
   const router = useRouter();
 
-  // 1. Extraer las funciones con los nombres correctos del store
   const {
     assistants,
     updateAssistant,

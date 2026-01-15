@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Footer = () => {
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
@@ -7,9 +9,8 @@ export const Footer = () => {
             © {new Date().getFullYear()} AI Assistant Dashboard. Prueba Técnica Frontend.
           </p>
           <div className="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
-            <span className="hover:text-blue-600 cursor-pointer transition-colors">Documentación</span>
-            <span className="hover:text-blue-600 cursor-pointer transition-colors">Soporte</span>
-            <span className="hover:text-blue-600 cursor-pointer transition-colors">Privacidad</span>
+            <Link href="https://github.com/jmblack15/AI-Assistant-dashboard" className="hover:text-blue-600 cursor-pointer transition-colors">Documentación</Link>
+            <Link href="https://www.linkedin.com/in/jose-manuel-osorio" className="hover:text-blue-600 cursor-pointer transition-colors">Sobre mí</Link>
           </div>
         </div>
       </div>

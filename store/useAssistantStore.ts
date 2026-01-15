@@ -26,17 +26,7 @@ interface AssistantState {
   clearChat: (assistantId: string) => void;
 }
 
-const initialData: Assistant[] = [
-  {
-    id: "1",
-    name: "Asistente de Ventas",
-    language: "Español",
-    tone: "Profesional",
-    responseLength: { short: 30, medium: 50, long: 20 },
-    audioEnabled: true,
-    rules: "Eres un asistente especializado en ventas..."
-  }
-];
+const initialData: Assistant[] = [];
 
 export const useAssistantStore = create<AssistantState>((set) => ({
   assistants: initialData,

@@ -37,7 +37,7 @@ export default function RootLayout({
           <QueryProvider>
             <Navbar />
             <AssistantModal />
-            <main className="min-h-[90vh]">{children}</main>
+            <main className="min-h-[84vh]">{children}</main>
             <Footer />
             <Toaster position="top-right" richColors closeButton />
           </QueryProvider>

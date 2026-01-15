@@ -20,7 +20,7 @@ export const SearchInput = ({ value, onChange }: SearchInputProps) => {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search assistants..."
+        placeholder="Buscar Asistente..."
         className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 outline-none ring-offset-background transition-all focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 shadow-sm"
       />
 
