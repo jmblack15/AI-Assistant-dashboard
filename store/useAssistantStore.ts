@@ -5,19 +5,22 @@ interface AssistantState {
 
   assistants: Assistant[];
   selectedAssistant: Assistant | null;
-  chatHistories: Record<string, Message[]>; 
+  chatHistories: Record<string, Message[]>;
+  searchQuery: string;
 
   isModalOpen: boolean;
   modalMode: 'create' | 'edit';
+
 
   setAssistants: (assistants: Assistant[]) => void;
   addAssistant: (assistant: Assistant) => void;
   updateAssistant: (assistant: Assistant) => void;
   deleteAssistant: (id: string) => void;
+  setSearchQuery: (query: string) => void;
 
   openModal: (mode: 'create' | 'edit', assistant?: Assistant) => void;
   closeModal: () => void;
-  
+
 
   addChatMessage: (assistantId: string, message: Message) => void;
   clearChat: (assistantId: string) => void;
@@ -41,15 +44,16 @@ export const useAssistantStore = create<AssistantState>((set) => ({
   chatHistories: {},
   isModalOpen: false,
   modalMode: 'create',
+  searchQuery: '',
 
   setAssistants: (assistants) => set({ assistants }),
 
-  addAssistant: (assistant) => 
+  addAssistant: (assistant) =>
     set((state) => ({ assistants: [...state.assistants, assistant] })),
 
   updateAssistant: (updatedAssistant) =>
     set((state) => ({
-      assistants: state.assistants.map((a) => 
+      assistants: state.assistants.map((a) =>
         a.id === updatedAssistant.id ? updatedAssistant : a
       ),
     })),
@@ -59,14 +63,14 @@ export const useAssistantStore = create<AssistantState>((set) => ({
       assistants: state.assistants.filter((a) => a.id !== id),
     })),
 
-  openModal: (mode, assistant) => 
-    set({ 
-      isModalOpen: true, 
-      modalMode: mode, 
-      selectedAssistant: assistant || null 
+  openModal: (mode, assistant) =>
+    set({
+      isModalOpen: true,
+      modalMode: mode,
+      selectedAssistant: assistant || null
     }),
 
-  closeModal: () => 
+  closeModal: () =>
     set({ isModalOpen: false, selectedAssistant: null }),
 
   addChatMessage: (assistantId, message) =>
@@ -81,4 +85,6 @@ export const useAssistantStore = create<AssistantState>((set) => ({
     set((state) => ({
       chatHistories: { ...state.chatHistories, [assistantId]: [] },
     })),
+
+  setSearchQuery: (query) => set({ searchQuery: query }),
 }));

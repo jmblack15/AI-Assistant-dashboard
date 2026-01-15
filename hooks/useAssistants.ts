@@ -6,7 +6,7 @@ const delay = (ms?: number) => new Promise(res => setTimeout(res, ms || Math.ran
 
 export const useAssistants = () => {
   const queryClient = useQueryClient();
-  const { assistants, setAssistants, addAssistant, updateAssistant, deleteAssistant } = useAssistantStore();
+  const { assistants, addAssistant, updateAssistant, deleteAssistant } = useAssistantStore();
 
   const assistantsQuery = useQuery({
     queryKey: ['assistants'],
@@ -44,7 +44,6 @@ export const useAssistants = () => {
     mutationFn: async (id: string) => {
       await delay();
       
-
       if (Math.random() < 0.1) {
         throw new Error('Error al eliminar el asistente. Inténtalo de nuevo.');
       }
