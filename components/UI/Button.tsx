@@ -2,7 +2,6 @@ import { LucideIcon } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-// Utilidad para mezclar clases de Tailwind de forma segura
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
@@ -31,7 +30,7 @@ export const Button = ({
     return (
         <button
             className={cn(
-                'flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
+                'flex items-center cursor-pointer justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
                 variants[variant],
                 className
             )}

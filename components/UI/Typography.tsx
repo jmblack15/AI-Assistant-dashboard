@@ -6,7 +6,7 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export const Heading = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <h1 className={cn("text-3xl font-extrabold text-slate-900 tracking-tight", className)}>
+  <h1 className={cn("text-3xl font-extrabold text-slate-900 tracking-tight dark:text-white", className)}>
     {children}
   </h1>
 );
@@ -30,11 +30,11 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const InputField = ({ label, error, className, ...props }: InputProps) => (
-  <div className="space-y-1.5 w-full">
-    {label && <label className="text-sm font-semibold text-slate-700">{label}</label>}
+  <div className="space-y-4 w-full ">
+    {label && <label className="text-sm font-semibold text-slate-700 mb-10">{label}</label>}
     <input
       className={cn(
-        "w-full px-3 py-2 bg-white border rounded-lg outline-none transition-all focus:ring-2 focus:ring-blue-500/20",
+        "w-full px-3 py-2 mt-2 bg-white border rounded-lg outline-none text-slate-900 transition-all focus:ring-2 focus:ring-blue-500/20",
         error ? "border-red-500" : "border-slate-200 focus:border-blue-500",
         className
       )}
