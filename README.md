@@ -1,10 +1,8 @@
-Aquí tienes el contenido completo listo para copiar y pegar en tu archivo README.md. He estructurado todo para que resalte tu capacidad técnica y organizativa.
-
-Markdown
-
 # 🤖 AI Assistant Manager - Technical Challenge
 
 Este proyecto es una plataforma de gestión de asistentes de IA desarrollada con **Next.js 15**, enfocada en la eficiencia operativa, la gestión de estado avanzada y una experiencia de usuario fluida. Permite crear, configurar y probar agentes virtuales en un entorno simulado de alto rendimiento.
+
+🔗 **Demo en vivo:** [https://ai-assistant-dashboard-bice.vercel.app/](https://ai-assistant-dashboard-bice.vercel.app/)
 
 ---
 
