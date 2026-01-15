@@ -1,6 +1,7 @@
 'use client';
 
 import { Search } from 'lucide-react';
+import { InputField } from "@/components/UI/Typography";
 
 interface SearchInputProps {
   value: string;
@@ -15,7 +16,7 @@ export const SearchInput = ({ value, onChange }: SearchInputProps) => {
         size={20}
       />
 
-      <input
+      <InputField
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}

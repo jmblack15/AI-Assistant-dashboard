@@ -15,7 +15,7 @@ export const AssistantModal = () => {
     const { isModalOpen, closeModal, modalMode, selectedAssistant } = useAssistantStore();
     const { createMutation, updateMutation } = useAssistants();
 
-    const { register, handleSubmit, watch, formState: { errors }, reset, trigger } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset, trigger } = useForm({
         defaultValues: {
             name: '',
             language: 'Español',
@@ -25,24 +25,22 @@ export const AssistantModal = () => {
         }
     });
 
-    // Efecto para cargar datos si estamos editando
+
     useEffect(() => {
         if (selectedAssistant) reset(selectedAssistant);
     }, [selectedAssistant, reset]);
 
     const handleNext = async () => {
-        // Validar solo el paso 1 antes de avanzar [cite: 54]
         const isValid = await trigger(['name', 'language', 'tone']);
         if (isValid) setStep(2);
     };
 
     const onSubmit = (data: any) => {
-        // Validación crítica: Suma debe ser 100% 
         const { short, medium, long } = data.responseLength;
         const total = Number(short) + Number(medium) + Number(long);
 
         if (total !== 100) {
-            alert(`La suma debe ser 100%. Actual: ${total}%`); // Puedes usar un Toast aquí
+            alert(`La suma debe ser 100%. Actual: ${total}%`);
             return;
         }
 
@@ -63,7 +61,7 @@ export const AssistantModal = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 {step === 1 ? (
-                    <div className="space-y-4 animate-in fade-in slide-in-from-right-4">
+                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
                         <InputField
                             label="Nombre del asistente"
                             {...register('name', { required: "Requerido", minLength: 3 })}
@@ -91,7 +89,7 @@ export const AssistantModal = () => {
 
                         <label className="flex items-center gap-2 cursor-pointer">
                             <input type="checkbox" {...register('audioEnabled')} className="w-4 h-4" />
-                            <span className="text-sm">Habilitar respuestas de audio</span>
+                            <span className="text-sm text-slate-700">Habilitar respuestas de audio</span>
                         </label>
 
                         <div className="flex gap-3 pt-4">
