@@ -6,6 +6,7 @@ import { AssistantModal } from "@/components/AssistantModal";
 import { Footer } from "@/components/UI/Footer";
 import { Navbar } from "@/components/UI/Navbar";
 import { ThemeProvider } from "./providers";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
             <AssistantModal />
             <main className="min-h-[90vh]">{children}</main>
             <Footer />
+            <Toaster position="top-right" richColors closeButton />
           </QueryProvider>
         </ThemeProvider>
 
